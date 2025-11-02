@@ -1,0 +1,167 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|c:\\analytics-test\\employeeanalyticsapi\\employeeanalyticsapi\\controllers\\analyticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|solutionrelative:employeeanalyticsapi\\controllers\\analyticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|c:\\analytics-test\\employeeanalyticsapi\\employeeanalyticsapi\\datal\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|solutionrelative:employeeanalyticsapi\\datal\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|c:\\analytics-test\\employeeanalyticsapi\\employeeanalyticsapi\\employeeanalyticsapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|solutionrelative:employeeanalyticsapi\\employeeanalyticsapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|c:\\analytics-test\\employeeanalyticsapi\\employeeanalyticsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|solutionrelative:employeeanalyticsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|c:\\analytics-test\\employeeanalyticsapi\\employeeanalyticsapi\\dtos\\averagesalarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|solutionrelative:employeeanalyticsapi\\dtos\\averagesalarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|c:\\analytics-test\\employeeanalyticsapi\\employeeanalyticsapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|solutionrelative:employeeanalyticsapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|c:\\analytics-test\\employeeanalyticsapi\\employeeanalyticsapi\\datal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|solutionrelative:employeeanalyticsapi\\datal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|c:\\analytics-test\\employeeanalyticsapi\\employeeanalyticsapi\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|solutionrelative:employeeanalyticsapi\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|c:\\analytics-test\\employeeanalyticsapi\\employeeanalyticsapi\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9B8F51B-B677-4D28-B525-6D824C1606E0}|EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj|solutionrelative:employeeanalyticsapi\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AnalyticsController.cs",
+              "DocumentMoniker": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\Controllers\\AnalyticsController.cs",
+              "RelativeDocumentMoniker": "EmployeeAnalyticsAPI\\Controllers\\AnalyticsController.cs",
+              "ToolTip": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\Controllers\\AnalyticsController.cs",
+              "RelativeToolTip": "EmployeeAnalyticsAPI\\Controllers\\AnalyticsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T23:16:52.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "EmployeeAnalyticsAPI\\appsettings.json",
+              "ToolTip": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\appsettings.json",
+              "RelativeToolTip": "EmployeeAnalyticsAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-01T22:58:43.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\Program.cs",
+              "RelativeDocumentMoniker": "EmployeeAnalyticsAPI\\Program.cs",
+              "ToolTip": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\Program.cs",
+              "RelativeToolTip": "EmployeeAnalyticsAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T23:06:59.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeAnalyticsAPI.csproj",
+              "DocumentMoniker": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj",
+              "RelativeDocumentMoniker": "EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj",
+              "ToolTip": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj",
+              "RelativeToolTip": "EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-01T22:56:22.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataSeeder.cs",
+              "DocumentMoniker": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\DataL\\DataSeeder.cs",
+              "RelativeDocumentMoniker": "EmployeeAnalyticsAPI\\DataL\\DataSeeder.cs",
+              "ToolTip": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\DataL\\DataSeeder.cs",
+              "RelativeToolTip": "EmployeeAnalyticsAPI\\DataL\\DataSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T00:20:53.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AverageSalaryDto.cs",
+              "DocumentMoniker": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\DTOs\\AverageSalaryDto.cs",
+              "RelativeDocumentMoniker": "EmployeeAnalyticsAPI\\DTOs\\AverageSalaryDto.cs",
+              "ToolTip": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\DTOs\\AverageSalaryDto.cs",
+              "RelativeToolTip": "EmployeeAnalyticsAPI\\DTOs\\AverageSalaryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T23:14:19.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\Models\\Department.cs",
+              "RelativeDocumentMoniker": "EmployeeAnalyticsAPI\\Models\\Department.cs",
+              "ToolTip": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\Models\\Department.cs",
+              "RelativeToolTip": "EmployeeAnalyticsAPI\\Models\\Department.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T23:01:50.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "EmployeeAnalyticsAPI\\Models\\Employee.cs",
+              "ToolTip": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\Models\\Employee.cs",
+              "RelativeToolTip": "EmployeeAnalyticsAPI\\Models\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T23:02:39.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\DataL\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "EmployeeAnalyticsAPI\\DataL\\AppDbContext.cs",
+              "ToolTip": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\DataL\\AppDbContext.cs",
+              "RelativeToolTip": "EmployeeAnalyticsAPI\\DataL\\AppDbContext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAMwBkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T00:25:05.587Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
