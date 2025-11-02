@@ -1,0 +1,62 @@
+[
+  {
+    "ContainingType": "EmployeeAnalyticsAPI.Controllers.AnalyticsController",
+    "Method": "GetAverageSalary",
+    "RelativePath": "api/Analytics/average-salary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "EmployeeAnalyticsAPI.DTOs.AverageSalaryDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EmployeeAnalyticsAPI.Controllers.AnalyticsController",
+    "Method": "GetSalaryExtremes",
+    "RelativePath": "api/Analytics/salary-extremes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[EmployeeAnalyticsAPI.DTOs.SalaryExtremesDto, EmployeeAnalyticsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EmployeeAnalyticsAPI.Controllers.AnalyticsController",
+    "Method": "GetTopDepartment",
+    "RelativePath": "api/Analytics/top-department",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "EmployeeAnalyticsAPI.DTOs.TopDepartmentDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
