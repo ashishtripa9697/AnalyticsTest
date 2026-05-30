@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj": {}
+    "E:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj": {}
   },
   "projects": {
-    "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj": {
+    "E:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj",
+        "projectUniqueName": "E:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj",
         "projectName": "EmployeeAnalyticsAPI",
-        "projectPath": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj",
+        "projectPath": "E:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\obj\\",
+        "outputPath": "E:\\Analytics-Test\\EmployeeAnalyticsAPI\\EmployeeAnalyticsAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -25,6 +25,7 @@
           "net8.0"
         ],
         "sources": {
+          "C:\\LocalNuget": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },

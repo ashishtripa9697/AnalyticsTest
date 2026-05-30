@@ -7,17 +7,7 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "EmployeeAnalyticsAPI.DTOs.AverageSalaryDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "EmployeeAnalyticsAPI.Controllers.AnalyticsController",
@@ -27,17 +17,7 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[EmployeeAnalyticsAPI.DTOs.SalaryExtremesDto, EmployeeAnalyticsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "EmployeeAnalyticsAPI.Controllers.AnalyticsController",

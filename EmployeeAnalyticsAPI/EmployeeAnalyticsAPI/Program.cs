@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<ISalary, SalaryService>();//Register with every time created epr every request
+builder.Services.AddScoped<ISalary, SalaryService>();
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -18,7 +18,7 @@ var conn = builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException("Connection string not set");
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(conn));
 
-builder.Services.AddTransient<DataSeeder>();//Register with every time created epr every request
+builder.Services.AddTransient<DataSeeder>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
