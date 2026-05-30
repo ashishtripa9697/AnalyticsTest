@@ -12,33 +12,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SalaryExtremesDto"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SalaryExtremesDto"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SalaryExtremesDto"
-                  }
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -50,24 +24,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/AverageSalaryDto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AverageSalaryDto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AverageSalaryDto"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -104,38 +61,6 @@
   },
   "components": {
     "schemas": {
-      "AverageSalaryDto": {
-        "type": "object",
-        "properties": {
-          "averageSalary": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "SalaryExtremesDto": {
-        "type": "object",
-        "properties": {
-          "department": {
-            "type": "string",
-            "nullable": true
-          },
-          "highestSalary": {
-            "type": "number",
-            "format": "double"
-          },
-          "lowestSalary": {
-            "type": "number",
-            "format": "double"
-          },
-          "employeeCount": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
       "TopDepartmentDto": {
         "type": "object",
         "properties": {
