@@ -1,9 +1,12 @@
 using EmployeeAnalyticsAPI.DataL;
+using EmployeeAnalyticsAPI.Interface;
+using EmployeeAnalyticsAPI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<ISalary, SalaryService>();//Register with every time created epr every request
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
