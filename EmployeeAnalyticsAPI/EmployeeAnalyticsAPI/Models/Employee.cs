@@ -9,5 +9,6 @@
         public int DepartmentId { get; set; }
         public Department? Department { get; set; }
         public List<Salary> SalariesTble { get; set; } = new();
+        public List<EmployeeChunk> EmployeeChunksTble { get; set; } = new();
     }
 }

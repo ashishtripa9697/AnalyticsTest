@@ -3,16 +3,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeAnalyticsAPI.DataL
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
-        public DbSet<Department> DepartmentsTble => Set<Department>();
+        public virtual DbSet<Department> DepartmentsTble => Set<Department>();
 
-        public DbSet<Employee> EmployeesTble => Set<Employee>();
+        public virtual DbSet<Employee> EmployeesTble => Set<Employee>();
 
-        public DbSet<Salary> SalariesTble => Set<Salary>();
+        public virtual DbSet<Salary> SalariesTble => Set<Salary>();
+        public virtual DbSet<EmployeeChunk> EmployeeChunksTble => Set<EmployeeChunk>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -40,6 +41,35 @@ namespace EmployeeAnalyticsAPI.DataL
                 b.Property(s => s.Amount).HasColumnType("decimal(18,2)");
                 b.HasOne(s => s.Employee).WithMany(e => e.SalariesTble).HasForeignKey(s => s.EmployeeId).OnDelete(DeleteBehavior.Cascade);
                 b.HasIndex(s => s.EmployeeId);
+            });
+            // DataL/AppDbContext.cs — inside EmployeeChunk config
+            modelBuilder.Entity<EmployeeChunk>(b =>
+            {
+                b.ToTable("EmployeeChunks");  
+
+                b.HasKey(ec => ec.Id);
+
+                b.Property(ec => ec.Content)
+                 .IsRequired()
+                 .HasColumnType("nvarchar(max)");
+
+                b.Property(ec => ec.Embedding)
+                 .IsRequired()
+                 .HasColumnType("nvarchar(max)");
+
+                b.Property(ec => ec.Department)
+                 .HasMaxLength(100);
+
+                b.Property(ec => ec.CreatedAt)
+                 .HasColumnType("datetime2")
+                 .HasDefaultValueSql("GETUTCDATE()");
+
+                b.HasOne(ec => ec.Employee)
+                 .WithMany(e => e.EmployeeChunksTble)
+                 .HasForeignKey(ec => ec.EmployeeId)
+                 .OnDelete(DeleteBehavior.Cascade);
+
+                b.HasIndex(ec => ec.EmployeeId);
             });
         }
     }
