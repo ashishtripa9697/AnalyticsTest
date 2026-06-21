@@ -14,6 +14,8 @@ namespace EmployeeAnalyticsAPI.DataL
 
         public virtual DbSet<Salary> SalariesTble => Set<Salary>();
         public virtual DbSet<EmployeeChunk> EmployeeChunksTble => Set<EmployeeChunk>();
+        public virtual DbSet<DocumentChunk> DocumentChunksTble => Set<DocumentChunk>();
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -70,6 +72,33 @@ namespace EmployeeAnalyticsAPI.DataL
                  .OnDelete(DeleteBehavior.Cascade);
 
                 b.HasIndex(ec => ec.EmployeeId);
+            });
+            // inside OnModelCreating add:
+            modelBuilder.Entity<DocumentChunk>(b =>
+            {
+                b.ToTable("DocumentChunks");
+                b.HasKey(d => d.Id);
+
+                b.Property(d => d.FileName)
+                 .IsRequired()
+                 .HasMaxLength(255);
+
+                b.Property(d => d.Content)
+                 .IsRequired()
+                 .HasColumnType("nvarchar(max)");
+
+                b.Property(d => d.Embedding)
+                 .IsRequired()
+                 .HasColumnType("nvarchar(max)");
+
+                b.Property(d => d.PageNumber)
+                 .IsRequired();
+
+                b.Property(d => d.CreatedAt)
+                 .HasColumnType("datetime2")
+                 .HasDefaultValueSql("GETUTCDATE()");
+
+                b.HasIndex(d => d.FileName);
             });
         }
     }
