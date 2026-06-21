@@ -45,7 +45,7 @@ namespace EmployeeAnalyticsAPI.Controllers
 /// cref="StatusCodeResult"/> with status code 500 if an error occurs.</returns>
         
         [HttpPost("query")]
-        public async Task<IActionResult> Query([FromBody] EmployeeQueryDto dto,CancellationToken ct)
+        public async Task<IActionResult> Query([FromForm] EmployeeQueryDto dto,CancellationToken ct)
         {
             if (string.IsNullOrWhiteSpace(dto.Question))
                 return BadRequest(new ApiResponse<EmployeeQueryDto>

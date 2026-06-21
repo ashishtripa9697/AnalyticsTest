@@ -19,6 +19,8 @@ var conn = builder.Configuration.GetConnectionString("DefaultConnection")
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(conn));
 builder.Services.AddScoped<EmbeddingService>();
 builder.Services.AddScoped<IEmployeeRagService, EmployeeRagService>();
+builder.Services.AddScoped<IDocumentRagService, DocumentRagService>();
+
 
 builder.Services.AddTransient<DataSeeder>();
 var app = builder.Build();
