@@ -8,7 +8,7 @@ namespace EmployeeAnalyticsAPI.Services
     public class SalaryService : ISalary
     {
         private readonly AppDbContext _context;
-        public SalaryService(AppDbContext context)
+        public SalaryService(AppDbContext context) 
         {
             _context = context;
         }

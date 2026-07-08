@@ -1,4 +1,6 @@
 using EmployeeAnalyticsAPI.DataL;
+using EmployeeAnalyticsAPI.GlobleService;
+using EmployeeAnalyticsAPI.GlobleService.Middleware;
 using EmployeeAnalyticsAPI.Interface;
 using EmployeeAnalyticsAPI.Services;
 using Microsoft.EntityFrameworkCore;
@@ -20,11 +22,14 @@ builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(conn));
 builder.Services.AddScoped<EmbeddingService>();
 builder.Services.AddScoped<IEmployeeRagService, EmployeeRagService>();
 builder.Services.AddScoped<IDocumentRagService, DocumentRagService>();
+builder.Services.AddSingleton<FileLogger>();
 
 
 builder.Services.AddTransient<DataSeeder>();
 var app = builder.Build();
+
 // Configure the HTTP request pipeline.
+app.UseGlobalExceptionHandler();
 using (var scop = app.Services.CreateScope())
 {
     var db=scop.ServiceProvider.GetRequiredService<AppDbContext>();

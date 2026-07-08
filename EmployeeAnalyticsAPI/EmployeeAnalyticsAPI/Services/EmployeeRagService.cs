@@ -1,11 +1,10 @@
-﻿// Services/EmployeeRagService.cs
-using System.Net.Http.Json;
-using System.Text.Json;
-using EmployeeAnalyticsAPI.DataL;
+﻿using EmployeeAnalyticsAPI.DataL;
 using EmployeeAnalyticsAPI.DTOs;
+using EmployeeAnalyticsAPI.GlobleService.StaticLogic;
 using EmployeeAnalyticsAPI.Interface;
 using EmployeeAnalyticsAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 namespace EmployeeAnalyticsAPI.Services
 {
@@ -72,7 +71,7 @@ namespace EmployeeAnalyticsAPI.Services
             if (!allChunks.Any())
             {
                 result.Status = false;
-                result.Message = "No employee data found. Please run ingest first.";
+                result.Message = MessageLogic.NoEmployeeData;
                 return result;
             }
 
@@ -97,7 +96,7 @@ namespace EmployeeAnalyticsAPI.Services
                     new
                     {
                         role = "system",
-                        content = "You are an HR analytics assistant. Answer using only the employee data provided. If the answer is not in the data, say you don't know."
+                        content = MessageLogic.AiAnswerIfNoData
                     },
                     new
                     {
@@ -148,7 +147,7 @@ namespace EmployeeAnalyticsAPI.Services
             if (string.IsNullOrWhiteSpace(answer))
             {
                 result.Status = false;
-                result.Message = "No answer returned from the model.";
+                result.Message = MessageLogic.ModelAnswer;
                 return result;
             }
 
