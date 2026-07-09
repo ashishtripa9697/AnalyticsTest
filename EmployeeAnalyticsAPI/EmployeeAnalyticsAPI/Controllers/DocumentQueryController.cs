@@ -1,5 +1,5 @@
-﻿// Controllers/DocumentQueryController.cs
-using EmployeeAnalyticsAPI.DTOs;
+﻿using EmployeeAnalyticsAPI.DTOs;
+using EmployeeAnalyticsAPI.GlobleService.StaticLogic;
 using EmployeeAnalyticsAPI.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -43,7 +43,7 @@ namespace EmployeeAnalyticsAPI.Controllers
         /// Ask a question about the uploaded policy document.
         /// Example: "What is the notice period for senior employees?"
         /// </summary>
-        [HttpPost("ask-document")]
+        [HttpGet("ask-document")]
         public async Task<IActionResult> AskDocument(
             [FromForm] EmployeeQueryDto dto,
             CancellationToken ct)
@@ -52,7 +52,7 @@ namespace EmployeeAnalyticsAPI.Controllers
                 return BadRequest(new ApiResponse<DocumentQueryDto>
                 {
                     Status = false,
-                    Message = "Question cannot be empty."
+                    Message = MessageLogic.Question
                 });
 
             _logger.LogInformation(

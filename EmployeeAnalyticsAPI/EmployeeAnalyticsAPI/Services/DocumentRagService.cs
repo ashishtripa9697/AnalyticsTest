@@ -1,5 +1,6 @@
 ﻿using EmployeeAnalyticsAPI.DataL;
 using EmployeeAnalyticsAPI.DTOs;
+using EmployeeAnalyticsAPI.GlobleService.StaticLogic;
 using EmployeeAnalyticsAPI.Interface;
 using EmployeeAnalyticsAPI.Models;
 using Microsoft.EntityFrameworkCore;
@@ -47,14 +48,14 @@ namespace EmployeeAnalyticsAPI.Services
             if (file == null || file.Length == 0)
             {
                 result.Status = false;
-                result.Message = "No file uploaded.";
+                result.Message = MessageLogic.NoFile;
                 return result;
             }
 
             if (!file.FileName.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
             {
                 result.Status = false;
-                result.Message = "Only PDF files are supported.";
+                result.Message = MessageLogic.Supported;
                 return result;
             }
 
@@ -98,7 +99,7 @@ namespace EmployeeAnalyticsAPI.Services
                 if (!allChunks.Any())
                 {
                     result.Status = false;
-                    result.Message = "No text could be extracted from the PDF.";
+                    result.Message = MessageLogic.NoFileUpload;
                     return result;
                 }
 
@@ -159,7 +160,7 @@ namespace EmployeeAnalyticsAPI.Services
                 if (!allChunks.Any())
                 {
                     result.Status = false;
-                    result.Message = "No documents found. Please upload a PDF first.";
+                    result.Message = MessageLogic.NoFileUpload;
                     return result;
                 }
 
@@ -187,11 +188,7 @@ namespace EmployeeAnalyticsAPI.Services
                     messages = new[]
                     {
                         new { role = "system",
-                              content = "You are a company policy assistant. " +
-                                        "Answer questions using only the policy document " +
-                                        "content provided. Always mention the page number " +
-                                        "your answer comes from. " +
-                                        "If the answer is not in the document, say so." },
+                              content = MessageLogic.CompanyPolicyAssisstent },
                         new { role = "user",
                               content = $"Policy content:\n{context}" +
                                         $"\n\nQuestion: {question}" }
@@ -224,7 +221,7 @@ namespace EmployeeAnalyticsAPI.Services
                     .GetString();
                 
                 result.Status = true;
-                result.Message = answer ?? "No answer returned.";
+                result.Message = answer ?? MessageLogic.NoAnswer;
                 result.Data.Add(new DocumentQueryDto { Question = question });
             }
             catch (Exception ex)

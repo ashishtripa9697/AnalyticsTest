@@ -1,5 +1,6 @@
 ﻿using EmployeeAnalyticsAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 
 namespace EmployeeAnalyticsAPI.DataL
 {
@@ -15,6 +16,7 @@ namespace EmployeeAnalyticsAPI.DataL
         public virtual DbSet<Salary> SalariesTble => Set<Salary>();
         public virtual DbSet<EmployeeChunk> EmployeeChunksTble => Set<EmployeeChunk>();
         public virtual DbSet<DocumentChunk> DocumentChunksTble => Set<DocumentChunk>();
+        public virtual DbSet<ErrorLog> ErrorsTble => Set<ErrorLog>();
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -99,6 +101,42 @@ namespace EmployeeAnalyticsAPI.DataL
                  .HasDefaultValueSql("GETUTCDATE()");
 
                 b.HasIndex(d => d.FileName);
+            });
+            modelBuilder.Entity<ErrorLog>(b =>
+            {
+                b.ToTable("ErrorLogs");
+                b.HasKey(e=>e.Id);
+                b.Property(e => e.TraceId)
+                .HasMaxLength(100)
+                .HasColumnType("varchar(100)");
+                b.Property(e => e.RequestPath)
+                .HasMaxLength(500)
+                .HasColumnType("varchar(500)");
+
+                b.Property(e => e.RequestMethod)
+                 .HasMaxLength(10)
+                 .HasColumnType("varchar(10)");
+
+                b.Property(e => e.ExceptionType)
+                 .HasMaxLength(300)
+                 .HasColumnType("varchar(300)");
+                b.Property(e => e.Source)
+     .HasMaxLength(300)
+     .HasColumnType("varchar(300)");
+
+                b.Property(e => e.UserId)
+                 .HasMaxLength(100)
+                 .HasColumnType("varchar(100)");
+
+                b.Property(e => e.Message)
+                 .HasColumnType("varchar(max)");        // ← varchar(max)
+
+                b.Property(e => e.StackTrace)
+                 .HasColumnType("varchar(max)");        // ← varchar(max)
+
+                b.Property(e => e.CreatedAt)
+                 .HasColumnType("datetime2")
+                 .HasDefaultValueSql("GETUTCDATE()");
             });
         }
     }
