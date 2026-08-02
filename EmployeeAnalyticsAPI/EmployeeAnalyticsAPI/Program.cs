@@ -22,7 +22,8 @@ builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(conn));
 builder.Services.AddScoped<EmbeddingService>();
 builder.Services.AddScoped<IEmployeeRagService, EmployeeRagService>();
 builder.Services.AddScoped<IDocumentRagService, DocumentRagService>();
-builder.Services.AddSingleton<FileLogger>();
+builder.Services.AddScoped<IEmployeeReportService, EmployeeReportService>();
+//builder.Services.AddSingleton<FileLogger>();
 
 
 builder.Services.AddTransient<DataSeeder>();
