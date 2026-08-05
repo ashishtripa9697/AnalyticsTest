@@ -56,7 +56,7 @@ namespace EmployeeAnalyticsAPI.Services
                         EmployeeCount = g.Select(x => x.Id).Distinct().Count()
                     };
             var result = await q.OrderByDescending(x => x.EmployeeCount).FirstOrDefaultAsync();
-            return result;
+            return result;  
         }
     }
 }
