@@ -43,7 +43,7 @@ namespace EmployeeAnalyticsAPI.Controllers
         /// Ask a question about the uploaded policy document.
         /// Example: "What is the notice period for senior employees?"
         /// </summary>
-        [HttpGet("ask-document")]
+        [HttpPost("ask-document")]
         public async Task<IActionResult> AskDocument(
             [FromForm] EmployeeQueryDto dto,
             CancellationToken ct)

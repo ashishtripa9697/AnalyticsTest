@@ -1,4 +1,5 @@
 ﻿// Controllers/EmployeeReportController.cs
+using EmployeeAnalyticsAPI.DTOs;
 using EmployeeAnalyticsAPI.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,8 +15,7 @@ namespace EmployeeAnalyticsAPI.Controllers
         private readonly IEmployeeReportService _report;
 
         public EmployeeReportController(
-            IEmployeeReportService report,
-            ILogger<EmployeeReportController> logger)
+            IEmployeeReportService report)
         {
             _report = report;
         }
@@ -47,16 +47,16 @@ namespace EmployeeAnalyticsAPI.Controllers
         /// <returns></returns>
         [HttpGet("all")]
         public async Task<IActionResult> GetAllReports(
-            CancellationToken ct)
+    int pageNumber = 1,
+    int pageSize = 20,
+    CancellationToken ct = default)
         {
-            var data = await _report.GenerateEmployeeReportsAsync(ct);
+            var data = await _report.GenerateEmployeeReportsAsync(
+                pageNumber,
+                pageSize,
+                ct);
 
-            return Ok(new
-            {
-                Status = true,
-                Count = data.Count,
-                Data = data
-            });
+            return Ok(data);
         }
 
         /// <summary>
@@ -72,25 +72,39 @@ namespace EmployeeAnalyticsAPI.Controllers
 
             var bytes = await _report
                 .GenerateEmployeeReportPdfByIdAsync(employeeId, ct);
-
+            if (bytes == null || bytes.Length == 0)
+                return NotFound(new { Status = false, Message = $"Employee {employeeId} not found." });
             return File(bytes, "application/pdf",
                 $"Employee_{employeeId}_Report.pdf");
         }
 
         /// <summary>
-        /// An endpoint to download a PDF report for all employees.
+        /// An endpoint to download a PDF report for employees.
         /// </summary>
-        /// <param name="ct"></param>
-        /// <returns></returns>
         [HttpGet("all/pdf")]
         public async Task<IActionResult> GetAllPdf(
-            CancellationToken ct)
+            int pageNumber = 1,
+            int pageSize = 20,
+            CancellationToken ct = default)
         {
+            var response = await _report.GenerateEmployeeReportsPdfAsync(
+                pageNumber,
+                pageSize,
+                ct);
 
-            var bytes = await _report.GenerateEmployeeReportsPdfAsync(ct);
+            if (!response.Status || response.Data == null || response.Data.Count == 0)
+            {
+                return NotFound(new
+                {
+                    Status = false,
+                    Message = "No employee reports found."
+                });
+            }
 
-            return File(bytes, "application/pdf",
-                $"AllEmployees_{DateTime.UtcNow:yyyyMMdd}.pdf");
+            return File(
+                response.Data[0],
+                "application/pdf",
+                $"Employees_Page_{pageNumber}_{DateTime.UtcNow:yyyyMMdd}.pdf");
         }
     }
 }

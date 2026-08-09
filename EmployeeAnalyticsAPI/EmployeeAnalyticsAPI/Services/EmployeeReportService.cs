@@ -35,26 +35,83 @@ namespace EmployeeAnalyticsAPI.Services
             return GenerateSinglePdf(report);
         }
 
-        public async Task<List<EmployeeReportDto>> GenerateEmployeeReportsAsync(
-            CancellationToken ct = default)
+        public async Task<ApiResponse<EmployeeReportDto>> GenerateEmployeeReportsAsync(
+     int pageNumber = 1,
+     int pageSize = 20,
+     CancellationToken ct = default)
         {
-           var employees=_context.EmployeesTble
+            if (pageNumber < 1)
+                pageNumber = 1;
+
+            if (pageSize < 1)
+                pageSize = 20;
+
+            if (pageSize > 100)
+                pageSize = 100;
+
+            var query = _context.EmployeesTble
                 .Include(e => e.Department)
                 .Include(e => e.SalariesTble)
                 .Include(e => e.EmployeeDetails)
-                .ToList();
-            var reports = employees.Select(MapToDto).ToList();
-            return reports;
+                .AsSplitQuery();
+
+            var totalRecords = await query.CountAsync(ct);
+
+            var employees = await query
+                .OrderBy(e => e.Id)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(ct);
+
+            var totalPages = (int)Math.Ceiling(
+                totalRecords / (double)pageSize);
+
+            return new ApiResponse<EmployeeReportDto>
+            {
+                Status = true,
+                Message = "Employee reports retrieved successfully.",
+                Data = employees.Select(MapToDto).ToList(),
+
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                TotalRecords = totalRecords,
+                TotalPages = totalPages
+            };
         }
 
-        public async Task<byte[]> GenerateEmployeeReportsPdfAsync(
-            CancellationToken ct = default)
+        public async Task<ApiResponse<byte[]>> GenerateEmployeeReportsPdfAsync(
+     int pageNumber = 1,
+     int pageSize = 20,
+     CancellationToken ct = default)
         {
-            var reports=await GenerateEmployeeReportsAsync(ct);
-            if(!reports.Any())
-                throw new InvalidOperationException(
-                    "No employee reports available to generate PDF.");
-            return GenerateAllPdf(reports);
+            var reports = await GenerateEmployeeReportsAsync(
+                pageNumber,
+                pageSize,
+                ct);
+
+            if (!reports.Status || reports.Data.Count == 0)
+            {
+                return new ApiResponse<byte[]>
+                {
+                    Status = false,
+                    Message = "No employee reports available to generate PDF.",
+                    PageNumber = pageNumber,
+                    PageSize = pageSize
+                };
+            }
+
+            var pdf = GenerateAllPdf(reports.Data);
+
+            return new ApiResponse<byte[]>
+            {
+                Status = true,
+                Message = "Employee report PDF generated successfully.",
+                Data = new List<byte[]> { pdf },
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                TotalRecords = reports.TotalRecords,
+                TotalPages = reports.TotalPages
+            };
         }
         private static EmployeeReportDto MapToDto(
            Employee emp)

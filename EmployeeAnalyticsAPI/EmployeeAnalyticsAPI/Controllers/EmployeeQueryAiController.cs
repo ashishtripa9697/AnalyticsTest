@@ -31,7 +31,7 @@ namespace EmployeeAnalyticsAPI.Controllers
        /// <summary>
       /// Processes a query related to employees and returns the result.
      /// </summary>  
-        [HttpGet("query")]
+        [HttpPost("query")]
         public async Task<IActionResult> Query([FromForm] EmployeeQueryDto dto,CancellationToken ct)
         {
             if (string.IsNullOrWhiteSpace(dto.Question))
